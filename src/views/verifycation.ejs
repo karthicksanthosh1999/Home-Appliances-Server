@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assigned Delivery Work</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    .btn{
+      padding: 15px 20px 15px 20px;
+      background-color: blueviolet;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .btn:hover{
+      color: blue;
+      background-color: #9f54e6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Verification Email</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Branch Information</h2>
+      <p><strong>Branch Name:</strong> <%= branchName %></p>
+    </section>
+
+    <section>
+      <h2>Employee Information</h2>
+      <p><strong>Name:</strong> <%= customerName %></p>
+    </section>
+    <section>
+      <h2>Actions</h2>
+        <a href='<%= verificationToken %>' class="btn" >Verify Now!</a>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quotation PDF</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        margin: 20px;
+      }
+      h1 {
+        color: #333;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table, th, td {
+        border: 1px solid black;
+      }
+      th, td {
+        padding: 10px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quotation Details</h1>
+
+      <h2>Customer Information</h2>
+      <p><strong>Name:</strong> <%= customerDetails.customerName %></p>
+      <p><strong>Mobile:</strong> <%= customerDetails.mobile %></p>
+      <p><strong>Email:</strong> <%= customerDetails.email %></p>
+      <p><strong>Address:</strong> <%= customerDetails.address %></p>
+
+      <h2>Products</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Brand</th>
+            <th>Quantity</th>
+            <th>MRP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% products.forEach(function(product) { %>
+            <tr>
+              <td><%= product.productId.productName %></td>
+              <td><%= product.productId.brand %></td>
+              <td><%= product.quentity %></td>
+              <td><%= product.productId.mrp %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+      <h2>Price Details</h2>
+      <!-- <p><strong>Paid:</strong> <%= prices.paid %></p> -->
+      <!-- <p><strong>Pending:</strong> <%= prices.pending %></p> -->
+      <p><strong>Total:</strong> <%= prices.total %></p>
+
+      <h2>Quotation Number</h2>
+      <p><%= quotationNo %></p>
+    </div>
+  </body>
+</html>
